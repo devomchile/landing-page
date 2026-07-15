@@ -1,0 +1,49 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="navbar__inner container">
+    <a class="navbar__brand" href="#">
+      <span class="navbar__logo">D</span>
+      <span class="navbar__name">Devom</span>
+    </a>
+
+    <div class="navbar__links">
+      <app-nav-item label="Inicio" [active]="true" />
+      <app-nav-item label="Servicios" />
+      <app-nav-item label="Nosotros" />
+      <app-nav-item label="Contacto" />
+    </div>
+
+    <div class="navbar__actions">
+      <button
+        class="navbar__theme"
+        (click)="themeService.toggle()"
+        aria-label="Cambiar tema">
+        @if (themeService.theme() === 'dark') {
+          <app-icon name="sun" [size]="18" />
+        } @else {
+          <app-icon name="moon" [size]="18" />
+        }
+      </button>
+
+      <app-button variant="primary" size="sm" class="navbar__cta">Contactar</app-button>
+
+      <button
+        class="navbar__menu"
+        (click)="menuOpen.set(!menuOpen())"
+        aria-label="Menu">
+        <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="24" />
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="navbar__mobile" (click)="menuOpen.set(false)">
+      <div class="navbar__mobile-inner" (click)="$event.stopPropagation()">
+        <app-nav-item label="Inicio" [active]="true" (clicked)="menuOpen.set(false)" />
+        <app-nav-item label="Servicios" (clicked)="menuOpen.set(false)" />
+        <app-nav-item label="Nosotros" (clicked)="menuOpen.set(false)" />
+        <app-nav-item label="Contacto" (clicked)="menuOpen.set(false)" />
+        <app-button variant="primary" size="md">Contactar</app-button>
+      </div>
+    </div>
+  }
+</nav>

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@source "./app/**/*.ts";
+@source "./app/**/*.html";
+
+@theme {
+  --color-devom-blue: #1E88FF;
+  --color-devom-sky: #34D5FF;
+  --color-devom-purple: #7B4DFF;
+  --color-devom-midnight: #071428;
+  --color-devom-dark: #1B2333;
+  --color-devom-gray: #E9EEF5;
+  --color-devom-white: #FFFFFF;
+  --color-devom-success: #19C37D;
+  --color-devom-error: #FF4D67;
+  --color-devom-warning: #FF9F43;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
