@@ -7,10 +7,14 @@ import { IconComponent } from '../icon/icon.component';
   imports: [IconComponent],
   template: `
     <div class="flex items-center gap-2">
-      <app-icon [name]="icon()" [size]="20" />
-      <span class="text-sm font-medium" style="color: var(--color-text-secondary);">{{ label() }}</span>
+      <app-icon>{{ icon() }}</app-icon>
+      <span
+        class="text-sm font-medium"
+        style="color: var(--color-text-secondary);"
+        >{{ label() }}</span
+      >
     </div>
-  `
+  `,
 })
 export class FeatureItemComponent {
   icon = input.required<string>();

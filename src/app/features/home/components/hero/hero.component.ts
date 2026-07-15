@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
-import {
-  BadgeComponent,
-  ButtonComponent,
-  FeatureItemComponent,
-  IconComponent,
-} from '../../../../shared';
+import { ButtonComponent, FeatureItemComponent } from '../../../../shared';
+import { HeroDashboardComponent } from './components';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [IconComponent, ButtonComponent, FeatureItemComponent],
+  imports: [ButtonComponent, FeatureItemComponent, HeroDashboardComponent],
   templateUrl: './hero.component.html',
 })
 export class HeroComponent {}
