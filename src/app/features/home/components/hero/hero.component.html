@@ -1,5 +1,6 @@
 <div class="py-6">
   <section
+    id="home"
     class="relative min-h-screen flex items-center pt-18 overflow-hidden"
     [style.background]="'var(--gradient-hero)'"
   >
@@ -70,10 +71,14 @@
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <app-button variant="primary" size="lg">
-            Comenzar proyecto
-          </app-button>
-          <app-button variant="glass" size="lg">Ver servicios</app-button>
+          <app-whatsapp-button>
+            <app-button variant="primary" size="lg">
+              Comenzar proyecto
+            </app-button>
+          </app-whatsapp-button>
+          <a href="#services">
+            <app-button variant="glass" size="lg">Ver servicios</app-button>
+          </a>
         </div>
 
         <div

@@ -1,0 +1,134 @@
+<section
+  id="contact"
+  class="section"
+  style="background: var(--color-bg-secondary)"
+>
+  <div class="container max-w-[900px] mx-auto">
+    <div class="text-center mb-12">
+      <span
+        class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4"
+        style="
+          background: var(--color-accent-subtle);
+          color: var(--color-accent);
+          font-family: var(--font-body);
+        "
+      >
+        Contacto
+      </span>
+      <h2
+        class="text-[clamp(1.8rem,4vw,2.8rem)] leading-tight mb-4"
+        style="
+          color: var(--color-text-primary);
+          font-family: var(--font-heading);
+          letter-spacing: -0.02em;
+        "
+      >
+        Hablemos de tu <span class="gradient-text">proyecto</span>
+      </h2>
+      <p
+        class="text-lg max-w-[520px] mx-auto"
+        style="
+          color: var(--color-text-secondary);
+          font-family: var(--font-body);
+        "
+      >
+        Completa el formulario y te responderemos a la brevedad
+      </p>
+    </div>
+
+    <div class="contact-card glass rounded-3xl p-8 md:p-12">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre *</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              class="form-input"
+              placeholder="Tu nombre"
+            />
+            @if (form.controls.name.touched && form.controls.name.errors) {
+            <span class="form-error">Nombre requerido (mín. 2 caracteres)</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email *</label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              class="form-input"
+              placeholder="tu@email.cl"
+            />
+            @if (form.controls.email.touched && form.controls.email.errors) {
+            <span class="form-error">Ingresá un email válido</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone" class="form-label">Teléfono</label>
+            <input
+              id="phone"
+              type="tel"
+              formControlName="phone"
+              class="form-input"
+              placeholder="+56 9 1234 5678"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Asunto *</label>
+            <select id="subject" formControlName="subject" class="form-input">
+              <option value="" disabled>Seleccioná un asunto</option>
+              <option value="Landing page">Landing page</option>
+              <option value="Sitio web">Sitio web</option>
+              <option value="App móvil">App móvil</option>
+              <option value="Hosting / Dominio">Hosting / Dominio</option>
+              <option value="Consultoría">Consultoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+            @if (form.controls.subject.touched && form.controls.subject.errors)
+            {
+            <span class="form-error">Seleccioná un asunto</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Mensaje *</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            class="form-input form-textarea"
+            rows="5"
+            placeholder="Contanos sobre tu proyecto..."
+          ></textarea>
+          @if (form.controls.message.touched && form.controls.message.errors) {
+          <span class="form-error"
+            >El mensaje debe tener al menos 10 caracteres</span
+          >
+          }
+        </div>
+
+        <div class="form-actions">
+          <app-button type="submit" variant="primary" size="lg">
+            Enviar mensaje
+          </app-button>
+
+          <app-whatsapp-button [message]="whatsappMessage">
+            <app-button variant="outline" size="lg">
+              <app-icon style="width: 18px; height: 18px; color: #25d366"
+                >chat</app-icon
+              >
+              WhatsApp
+            </app-button>
+          </app-whatsapp-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

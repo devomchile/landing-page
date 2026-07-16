@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { AboutComponent } from '../about-us/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesComponent } from './components/services';
-import { TestimonialsComponent } from './components/testimonials';
 import { PricingComponent } from './components/pricing';
 import { CtaComponent } from './components/cta';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +13,17 @@ import { CtaComponent } from './components/cta';
     HeroComponent,
     ServicesComponent,
     AboutComponent,
-    TestimonialsComponent,
     PricingComponent,
     CtaComponent,
+    ContactComponent,
   ],
   template: `
     <main>
       <app-hero />
       <app-services />
       <app-about />
-      <app-testimonials />
       <app-pricing />
+      <app-contact />
       <app-cta />
     </main>
   `,
