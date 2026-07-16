@@ -12,7 +12,7 @@ import { IconComponent } from '../icon/icon.component';
         class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
         style="background: var(--gradient-card);"
       >
-        <app-icon>edit</app-icon>
+        <app-icon>{{ icon() }}</app-icon>
       </div>
       } @if (title()) {
       <h3
