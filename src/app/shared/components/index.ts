@@ -5,4 +5,5 @@ export * from './feature-item';
 export * from './floating-whatsapp';
 export * from './icon';
 export * from './nav-item';
+export * from './toast';
 export * from './whatsapp-button';

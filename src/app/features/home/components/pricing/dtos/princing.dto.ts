@@ -1,4 +1,5 @@
 export type PrincingDto = Readonly<{
+  id?: number;
   name: string;
   desc: string;
   price: string;

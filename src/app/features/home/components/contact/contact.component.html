@@ -49,7 +49,7 @@
               placeholder="Tu nombre"
             />
             @if (form.controls.name.touched && form.controls.name.errors) {
-            <span class="form-error">Nombre requerido (mín. 2 caracteres)</span>
+            <span class="form-error">Nombre requerido (min. 2 caracteres)</span>
             }
           </div>
 
@@ -63,14 +63,14 @@
               placeholder="tu@email.cl"
             />
             @if (form.controls.email.touched && form.controls.email.errors) {
-            <span class="form-error">Ingresá un email válido</span>
+            <span class="form-error">Ingresa un email valido</span>
             }
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="phone" class="form-label">Teléfono</label>
+            <label for="phone" class="form-label">Telefono</label>
             <input
               id="phone"
               type="tel"
@@ -83,17 +83,17 @@
           <div class="form-group">
             <label for="subject" class="form-label">Asunto *</label>
             <select id="subject" formControlName="subject" class="form-input">
-              <option value="" disabled>Seleccioná un asunto</option>
+              <option value="" disabled>Selecciona un asunto</option>
               <option value="Landing page">Landing page</option>
               <option value="Sitio web">Sitio web</option>
-              <option value="App móvil">App móvil</option>
+              <option value="App movil">App movil</option>
               <option value="Hosting / Dominio">Hosting / Dominio</option>
-              <option value="Consultoría">Consultoría</option>
+              <option value="Consultoria">Consultoria</option>
               <option value="Otro">Otro</option>
             </select>
             @if (form.controls.subject.touched && form.controls.subject.errors)
             {
-            <span class="form-error">Seleccioná un asunto</span>
+            <span class="form-error">Selecciona un asunto</span>
             }
           </div>
         </div>
@@ -105,7 +105,7 @@
             formControlName="message"
             class="form-input form-textarea"
             rows="5"
-            placeholder="Contanos sobre tu proyecto..."
+            placeholder="Cuentanos sobre tu proyecto..."
           ></textarea>
           @if (form.controls.message.touched && form.controls.message.errors) {
           <span class="form-error"
@@ -115,8 +115,13 @@
         </div>
 
         <div class="form-actions">
-          <app-button type="submit" variant="primary" size="lg">
-            Enviar mensaje
+          <app-button
+            type="submit"
+            variant="primary"
+            size="lg"
+            [disabled]="!!(formService.isLoading$ | async)"
+          >
+            {{ (formService.isLoading$ | async) ? 'Enviando...' : 'Enviar mensaje' }}
           </app-button>
 
           <app-whatsapp-button [message]="whatsappMessage">
