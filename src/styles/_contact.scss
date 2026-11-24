@@ -13,3 +13,8 @@ textarea{min-height:110px;resize:vertical}
 .ok{font-size:.92rem;color:var(--senal)}
 @media (max-width:860px){.contact .box{grid-template-columns:1fr;padding:28px}}
 @media (max-width:520px){form{grid-template-columns:1fr}}
+.ok.err{color:#FF6B81}
+.is-light .ok.err{color:#C8233E}
+label .opt{opacity:.7}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#FF6B81}
+.btn[disabled]{opacity:.7;cursor:progress;transform:none}

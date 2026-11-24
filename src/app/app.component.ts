@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { WhatsappFloatComponent } from './shared/whatsapp/whatsapp-float.component';
 import { ScrollProgressComponent } from './layout/scroll-progress/scroll-progress.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, ScrollProgressComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, ScrollProgressComponent, WhatsappFloatComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
 })

@@ -1,0 +1,50 @@
+<section class="contact" id="contacto">
+  <div class="in">
+    <div class="box" appReveal="s">
+      <div class="side">
+        <span class="eyebrow">Contacto</span>
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p class="muted">
+          Cuéntanos qué necesitas y te respondemos con una propuesta. La primera conversación no tiene costo.
+        </p>
+        <span class="mail">hola&#64;devom.cl</span>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" formControlName="name" autocomplete="name" placeholder="Tu nombre" [attr.aria-invalid]="invalid('name')" />
+        </div>
+        <div class="field">
+          <label for="correo">Correo</label>
+          <input id="correo" type="email" formControlName="email" autocomplete="email" placeholder="tu@correo.cl" [attr.aria-invalid]="invalid('email')" />
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono <span class="opt">(opcional)</span></label>
+          <input id="telefono" type="tel" formControlName="phone" autocomplete="tel" placeholder="+56 9 1234 5678" />
+        </div>
+        <div class="field">
+          <label for="tipo">¿Qué necesitas?</label>
+          <select id="tipo" formControlName="subject">
+            @for (n of needs; track n) {
+              <option [value]="n">{{ n }}</option>
+            }
+          </select>
+        </div>
+        <div class="field full">
+          <label for="mensaje">Cuéntanos más</label>
+          <textarea id="mensaje" formControlName="message" placeholder="Describe brevemente tu proyecto" [attr.aria-invalid]="invalid('message')"></textarea>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-p" type="submit" [disabled]="status() === 'sending'">
+            {{ status() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
+          </button>
+          <a class="btn btn-wa" [href]="whatsappHref()" target="_blank" rel="noopener noreferrer">
+            <app-whatsapp-icon />O escríbenos por WhatsApp
+          </a>
+          <span class="ok" role="status" [class.err]="status() === 'error' || status() === 'invalid'">{{ feedback() }}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
