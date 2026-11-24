@@ -1,3 +1,4 @@
+import { environment } from '../../../../environments/environment';
 import { Component, input } from '@angular/core';
 
 @Component({
@@ -19,7 +20,7 @@ import { Component, input } from '@angular/core';
   ],
 })
 export class WhatsappButtonComponent {
-  private readonly phoneNumber = '56946432453';
+  private readonly phoneNumber = environment.whatsappNumber;
   message = input<string>('Hola, me gustaría información sobre sus servicios', {
     alias: 'message',
   });

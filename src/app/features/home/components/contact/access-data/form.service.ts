@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import {
   BehaviorSubject,
@@ -37,15 +37,7 @@ export class FormService {
         tap(() => this.#hasError$.next(false)),
         switchMap(({ formId, formData }) =>
           this.#httpClient
-            .post(
-              `${ApiPathEnum.CONTACTS}/${formId}/feedback`,
-              formData,
-              {
-                headers: new HttpHeaders({
-                  Authorization: `Bearer ${environment.tokenWPApi}`,
-                }),
-              }
-            )
+            .post(`${ApiPathEnum.CONTACTS}/${formId}/feedback`, formData)
             .pipe(
               catchError(() => {
                 this.#isLoading$.next(false);
