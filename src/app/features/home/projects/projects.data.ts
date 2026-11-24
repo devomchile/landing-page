@@ -54,8 +54,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     name: 'Gescamp360',
     initials: 'G3',
     description:
-      'Plataforma para campañas electorales: territorio y metas por comuna, red de voluntarios y simpatizantes, gasto contra el tope del Servel, Día D con apoderados y un estratega con IA.',
-    tags: ['SaaS', 'Campañas electorales', 'Web y app de terreno'],
+      'SaaS de gestión política que acompaña al candidato en campaña, Día D, gobierno y reelección: CRM de simpatizantes y líderes, app de terreno offline, sala de guerra con apoderados en vivo y un estratega con IA.',
+    tags: ['SaaS', 'Gestión política', 'Web, iOS y Android'],
     image: 'proyectos/gescamp360.jpg',
   },
 ];
