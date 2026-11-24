@@ -50,5 +50,12 @@ export const PORTFOLIO: PortfolioItem[] = [
     url: 'https://gerab.cl',
     image: 'proyectos/gerab.jpg',
   },
-  { name: 'Gescamp360', initials: 'G3', description: PENDING, tags: ['Tipo por definir'] },
+  {
+    name: 'Gescamp360',
+    initials: 'G3',
+    description:
+      'Plataforma para campañas electorales: territorio y metas por comuna, red de voluntarios y simpatizantes, gasto contra el tope del Servel, Día D con apoderados y un estratega con IA.',
+    tags: ['SaaS', 'Campañas electorales', 'Web y app de terreno'],
+    image: 'proyectos/gescamp360.jpg',
+  },
 ];
