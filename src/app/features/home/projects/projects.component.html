@@ -1,0 +1,56 @@
+<section id="proyectos">
+  <app-network-background />
+  <div class="in">
+    <div class="sec-head" appReveal>
+      <span class="eyebrow">Proyectos</span>
+      <h2>Portafolio.</h2>
+    </div>
+
+    <article class="project" appReveal="s">
+      <div class="shot">
+        <img #shot [src]="featured.image" [alt]="featured.imageAlt" width="615" height="480" loading="lazy" />
+      </div>
+      <div class="txt">
+        <div class="chips">
+          @for (t of featured.tags; track t) {
+            <span class="chip">{{ t }}</span>
+          }
+        </div>
+        <h3 style="font-size: 1.6rem">{{ featured.name }}</h3>
+        <p class="muted">{{ featured.description }}</p>
+        <ul class="feat">
+          @for (f of featured.features; track f) {
+            <li>{{ f }}</li>
+          }
+        </ul>
+      </div>
+    </article>
+
+    <div class="pf-grid">
+      @for (p of portfolio; track p.name) {
+        <article class="pf" appReveal>
+          <div class="pf-shot">
+            @if (p.image) {
+              <img [src]="p.image" [alt]="'Captura de ' + p.name" loading="lazy" />
+            } @else {
+              <span class="pf-init">{{ p.initials }}</span>
+              <span class="pf-ph">Captura del proyecto</span>
+            }
+          </div>
+          <div class="pf-txt">
+            <div class="chips">
+              @for (t of p.tags; track t) {
+                <span class="chip">{{ t }}</span>
+              }
+            </div>
+            <h3>{{ p.name }}</h3>
+            <p class="muted">{{ p.description }}</p>
+            @if (p.url) {
+              <a class="pf-link" [href]="p.url" target="_blank" rel="noopener noreferrer">Ver proyecto →</a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
