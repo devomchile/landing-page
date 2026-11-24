@@ -41,6 +41,14 @@ const PENDING = 'Descripción pendiente: qué es, para quién y qué problema re
 
 export const PORTFOLIO: PortfolioItem[] = [
   { name: 'Redom', initials: 'R', description: PENDING, tags: ['Tipo por definir'] },
-  { name: 'Gerab', initials: 'G', description: PENDING, tags: ['Tipo por definir'] },
+  {
+    name: 'Gerab',
+    initials: 'G',
+    description:
+      'Plataforma para cuerpos de bomberos: central de alarmas con mapa táctico de grifos y desfibriladores, despacho y estado del material mayor y disponibilidad de voluntarios.',
+    tags: ['Plataforma web', 'App Android e iOS', 'Bomberos'],
+    url: 'https://gerab.cl',
+    image: 'proyectos/gerab.jpg',
+  },
   { name: 'Gescamp360', initials: 'G3', description: PENDING, tags: ['Tipo por definir'] },
 ];
