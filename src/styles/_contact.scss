@@ -1,0 +1,15 @@
+/* Contacto */
+.contact .box{background:radial-gradient(100% 120% at 100% 0%,var(--box-glow),transparent 60%),var(--noche-2);border:1px solid var(--linea);border-radius:24px;padding:48px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px}
+.contact .side{display:flex;flex-direction:column;gap:18px}
+.mail{font-family:var(--mono);font-size:1rem;color:var(--senal);user-select:all}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:.85rem;color:var(--niebla-2)}
+input,select,textarea{font:inherit;font-size:.98rem;color:var(--niebla);background:var(--field);border:1px solid var(--linea);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--senal);box-shadow:0 0 0 3px rgba(34,211,249,.15)}
+textarea{min-height:110px;resize:vertical}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ok{font-size:.92rem;color:var(--senal)}
+@media (max-width:860px){.contact .box{grid-template-columns:1fr;padding:28px}}
+@media (max-width:520px){form{grid-template-columns:1fr}}

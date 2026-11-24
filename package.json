@@ -13,21 +13,14 @@
     "node": ">=26"
   },
   "dependencies": {
-    "@angular/animations": "^22.3.0",
-    "@angular/cdk": "^22.3.0",
     "@angular/common": "^22.3.0",
     "@angular/compiler": "^22.3.0",
     "@angular/core": "^22.3.0",
     "@angular/forms": "^22.3.0",
-    "@angular/material": "^22.3.0",
     "@angular/platform-browser": "^22.3.0",
     "@angular/platform-browser-dynamic": "^22.3.0",
     "@angular/router": "^22.3.0",
-    "@tailwindcss/postcss": "^4.3.2",
-    "autoprefixer": "^10.5.3",
-    "postcss": "^8.5.19",
     "rxjs": "~7.8.0",
-    "tailwindcss": "^4.3.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

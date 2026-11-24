@@ -1,0 +1,24 @@
+:root{
+  color-scheme: dark;
+  --noche:#050B24; --noche-2:#0D1636; --linea:#1F2A52;
+  --niebla:#E9EDF8; --niebla-2:#98A3C4;
+  --senal:#22D3F9; --azul:#1E6BFF; --violeta:#7B2FF7; --lila:#C35CFF;
+  --grad:linear-gradient(90deg,#22D3F9 0%,#1E6BFF 42%,#7B2FF7 78%,#C35CFF 100%);
+  --nav-bg:rgba(5,11,36,.82); --glow-v:rgba(123,47,247,.35); --glow-c:rgba(34,211,249,.16);
+  --band:rgba(13,22,54,.7); --box-glow:rgba(123,47,247,.28); --field:#050B24;
+  --display:"Sora","Arial Rounded MT Bold",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){ --noche:#F4F6FC; --noche-2:#FFFFFF; --linea:#DCE2F0; --niebla:#0B1230; --niebla-2:#4E5A7E;
+  --senal:#0A84B8; --azul:#1E5FE6; --violeta:#6A22E0; --lila:#9B3FE0;
+  --nav-bg:rgba(244,246,252,.85); --glow-v:rgba(123,47,247,.16); --glow-c:rgba(34,211,249,.18);
+  --band:rgba(255,255,255,.75); --box-glow:rgba(123,47,247,.12); --field:#F4F6FC; color-scheme:light; } }
+:root[data-theme="light"]{ --noche:#F4F6FC; --noche-2:#FFFFFF; --linea:#DCE2F0; --niebla:#0B1230; --niebla-2:#4E5A7E;
+  --senal:#0A84B8; --azul:#1E5FE6; --violeta:#6A22E0; --lila:#9B3FE0;
+  --nav-bg:rgba(244,246,252,.85); --glow-v:rgba(123,47,247,.16); --glow-c:rgba(34,211,249,.18);
+  --band:rgba(255,255,255,.75); --box-glow:rgba(123,47,247,.12); --field:#F4F6FC; color-scheme:light; }
+:root{--glass:rgba(16,26,64,.42); --glass-2:rgba(16,26,64,.3); --glass-line:rgba(255,255,255,.10); --glass-edge:rgba(255,255,255,.04); --glass-shadow:0 20px 60px -28px rgba(0,0,0,.7); --blob-a:.55; --net-line:120,150,255;}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){ --glass:rgba(255,255,255,.55); --glass-2:rgba(255,255,255,.4); --glass-line:rgba(255,255,255,.85); --glass-edge:rgba(11,18,48,.08); --glass-shadow:0 18px 50px -24px rgba(40,50,120,.35); --blob-a:.32; --net-line:30,40,110; } }
+:root[data-theme="light"]{ --glass:rgba(255,255,255,.55); --glass-2:rgba(255,255,255,.4); --glass-line:rgba(255,255,255,.85); --glass-edge:rgba(11,18,48,.08); --glass-shadow:0 18px 50px -24px rgba(40,50,120,.35); --blob-a:.32; --net-line:30,40,110; }
