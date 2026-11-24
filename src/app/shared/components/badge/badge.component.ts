@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-badge',
   standalone: true,
   template: `<span [class]="classes"><ng-content /></span>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       .badge {

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CardsBannerDto } from './dtos';
 import { IconComponent } from '../../../../../shared';
 
 @Component({
   selector: 'app-hero-dashboard',
   templateUrl: './hero-dashboard.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IconComponent],
 })
 export class HeroDashboardComponent {

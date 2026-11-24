@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesComponent } from './components/services';
 import { PricingComponent } from './components/pricing';
@@ -17,6 +17,7 @@ import { ContactComponent } from './components/contact/contact.component';
     CtaComponent,
     ContactComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <main>
       <app-hero />

@@ -1,4 +1,9 @@
-import { Component, input, output } from '@angular/core';
+import {
+  Component,
+  input,
+  output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 export type ToastType = 'success' | 'error' | 'info';
 
@@ -13,6 +18,7 @@ export type ToastType = 'success' | 'error' | 'info';
       <span class="toast__message">{{ message() }}</span>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: `
     .toast {
       display: flex;

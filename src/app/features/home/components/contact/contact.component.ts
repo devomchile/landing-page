@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { AsyncPipe } from '@angular/common';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
@@ -21,6 +21,7 @@ import { filter, tap } from 'rxjs';
     AsyncPipe,
   ],
   templateUrl: './contact.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
@@ -55,10 +56,10 @@ export class ContactComponent {
         takeUntilDestroyed(),
         tap(() => {
           this.#toastService.success(
-            'Mensaje enviado correctamente. Te contactaremos pronto.'
+            'Mensaje enviado correctamente. Te contactaremos pronto.',
           );
           this.form.reset();
-        })
+        }),
       )
       .subscribe();
 
@@ -66,7 +67,7 @@ export class ContactComponent {
       .pipe(
         takeUntilDestroyed(),
         filter(Boolean),
-        tap(() => this.#toastService.info('Enviando mensaje...'))
+        tap(() => this.#toastService.info('Enviando mensaje...')),
       )
       .subscribe();
 
@@ -76,9 +77,9 @@ export class ContactComponent {
         filter(Boolean),
         tap(() =>
           this.#toastService.error(
-            'Hubo un error al enviar el mensaje. Intenta nuevamente.'
-          )
-        )
+            'Hubo un error al enviar el mensaje. Intenta nuevamente.',
+          ),
+        ),
       )
       .subscribe();
   }
@@ -92,7 +93,10 @@ export class ContactComponent {
       formData.append('your-telefono', v.phone ?? '');
       formData.append('your-asunto', v.subject ?? '');
       formData.append('your-message', v.message ?? '');
-      formData.append('_wpcf7_unit_tag', `wpcf7-f${environment.cf7FormId}-p${environment.cf7FormId}`);
+      formData.append(
+        '_wpcf7_unit_tag',
+        `wpcf7-f${environment.cf7FormId}-p${environment.cf7FormId}`,
+      );
 
       this.formService
         .submitForm(formData)

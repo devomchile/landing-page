@@ -1,5 +1,5 @@
 import { environment } from '../../../../environments/environment';
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-whatsapp-button',
@@ -9,6 +9,7 @@ import { Component, input } from '@angular/core';
       <ng-content />
     </a>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       a {

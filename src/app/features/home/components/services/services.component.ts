@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CardComponent } from '../../../../shared';
 import { CardServiceDto } from './dtos';
 
 @Component({
   selector: 'app-services',
   imports: [CardComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './services.component.html',
 })
 export class ServicesComponent {

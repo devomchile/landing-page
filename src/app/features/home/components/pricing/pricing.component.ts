@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
-import { ButtonComponent, IconComponent, WhatsappButtonComponent } from '../../../../shared';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {
+  ButtonComponent,
+  IconComponent,
+  WhatsappButtonComponent,
+} from '../../../../shared';
 import { PrincingDto } from './dtos';
 
 @Component({
   selector: 'app-pricing',
   imports: [IconComponent, ButtonComponent, WhatsappButtonComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './pricing.component.html',
 })
 export class PricingComponent {

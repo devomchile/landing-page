@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-icon',
   imports: [MatIconModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `<mat-icon (click)="$clicked.emit()">
     <ng-content></ng-content>
   </mat-icon>`,

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -8,19 +8,20 @@ import { IconComponent } from '../icon/icon.component';
   template: `
     <div [class]="cardClasses">
       @if (icon()) {
-      <div
-        class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-        style="background: var(--gradient-card);"
-      >
-        <app-icon>{{ icon() }}</app-icon>
-      </div>
-      } @if (title()) {
-      <h3
-        class="text-lg font-bold mb-2"
-        style="color: var(--color-text-primary); font-family: var(--font-heading);"
-      >
-        {{ title() }}
-      </h3>
+        <div
+          class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+          style="background: var(--gradient-card);"
+        >
+          <app-icon>{{ icon() }}</app-icon>
+        </div>
+      }
+      @if (title()) {
+        <h3
+          class="text-lg font-bold mb-2"
+          style="color: var(--color-text-primary); font-family: var(--font-heading);"
+        >
+          {{ title() }}
+        </h3>
       }
       <div
         class="leading-relaxed text-[0.9375rem]"
@@ -30,6 +31,7 @@ import { IconComponent } from '../icon/icon.component';
       </div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       .card {
@@ -43,7 +45,8 @@ import { IconComponent } from '../icon/icon.component';
         transform: translateY(-4px);
         background: var(--color-bg-card-hover);
         border-color: var(--color-border-hover);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
+        box-shadow:
+          0 10px 40px rgba(0, 0, 0, 0.15),
           0 0 40px rgba(30, 136, 255, 0.15);
       }
     `,
