@@ -37,10 +37,15 @@ export const FEATURED: FeaturedProject = {
   ],
 };
 
-const PENDING = 'Descripción pendiente: qué es, para quién y qué problema resuelve.';
-
 export const PORTFOLIO: PortfolioItem[] = [
-  { name: 'Redom', initials: 'R', description: PENDING, tags: ['Tipo por definir'] },
+  {
+    name: 'Redom',
+    initials: 'R',
+    description:
+      'SaaS para administrar restaurantes en un solo lugar: punto de venta con mesas y comandas a cocina, carta digital con QR, pedidos y delivery, inventario con recetas y costeo, caja y finanzas.',
+    tags: ['SaaS', 'Restaurantes', 'Modo oscuro'],
+    image: 'proyectos/redom.jpg',
+  },
   {
     name: 'Gerab',
     initials: 'G',
