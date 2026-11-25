@@ -1,0 +1,25 @@
+/* WhatsApp flotante */
+.wa{position:fixed;z-index:50;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;pointer-events:none}
+.wa-btn{pointer-events:auto;position:relative;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,rgba(37,211,102,.55),rgba(18,140,126,.45));-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);
+  border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 12px 34px -10px rgba(37,211,102,.7);
+  transform:translate(var(--tx,0),var(--ty,0)) scale(var(--s,0));transition:transform .5s cubic-bezier(.3,1.6,.5,1),box-shadow .3s}
+.wa.on .wa-btn{--s:1}
+.wa-btn:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 40px -8px rgba(37,211,102,.9)}
+.wa-btn svg{width:32px;height:32px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));transform:translate(calc(var(--tx,0) * .35),calc(var(--ty,0) * .35))}
+.wa-btn::before,.wa-btn::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(37,211,102,.55);opacity:0;pointer-events:none}
+.wa.on .wa-btn::before{animation:ring 2.8s ease-out infinite}
+.wa.on .wa-btn::after{animation:ring 2.8s ease-out 1.4s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+.wa-bubble{pointer-events:auto;font-family:var(--body);font-size:.92rem;color:var(--niebla);padding:10px 14px;border-radius:16px 16px 4px 16px;
+  background:linear-gradient(135deg,var(--glass),var(--glass-2));-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);
+  border:1px solid var(--glass-line);box-shadow:var(--glass-shadow);max-width:220px;opacity:0;transform:translateX(12px) scale(.96);transition:opacity .4s,transform .4s;cursor:pointer;position:relative}
+.wa-bubble.show{opacity:1;transform:none}
+.wa-bubble .x{position:absolute;top:-8px;left:-8px;width:22px;height:22px;border-radius:50%;border:1px solid var(--glass-line);background:var(--noche-2);color:var(--niebla-2);font-size:.75rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wa-bubble b{color:#25D366;font-weight:600}
+.wa-dots::after{content:"";display:inline-block;width:1ch;animation:dots 1s steps(4) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+.btn-wa{background:linear-gradient(135deg,rgba(37,211,102,.25),rgba(18,140,126,.2));border:1px solid rgba(37,211,102,.5);color:var(--niebla);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.btn-wa svg{width:18px;height:18px;color:#25D366}
+@media (max-width:520px){.wa-bubble{max-width:170px;font-size:.85rem}}
+@media (prefers-reduced-motion:reduce){.wa-btn{transition:none}.wa.on .wa-btn::before,.wa.on .wa-btn::after{animation:none}}

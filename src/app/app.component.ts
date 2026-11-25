@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './features/layout/navbar/navbar.component';
-import { FooterComponent } from './features/layout/footer/footer.component';
-import { FloatingWhatsappComponent } from './shared/components/floating-whatsapp/floating-whatsapp.component';
+import { ThemeService } from './core/services/theme.service';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { WhatsappFloatComponent } from './shared/whatsapp/whatsapp-float.component';
+import { ScrollProgressComponent } from './layout/scroll-progress/scroll-progress.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, FloatingWhatsappComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, ScrollProgressComponent, WhatsappFloatComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  // Se instancia al arrancar para aplicar el tema antes del primer render.
+  protected readonly theme = inject(ThemeService);
+}

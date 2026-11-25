@@ -1,0 +1,10 @@
+/* Servicios */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.svc{background:var(--noche-2);border:1px solid var(--linea);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s ease,transform .2s ease}
+.svc:hover{border-color:rgba(123,47,247,.7);transform:translateY(-2px)}
+.svc .tag{font-family:var(--mono);font-size:.82rem;color:var(--senal)}
+.svc ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:.93rem;color:var(--niebla-2)}
+.svc li::before{content:"› ";color:var(--violeta)}
+.svc{position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(123,47,247,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.svc:hover::before{opacity:1}

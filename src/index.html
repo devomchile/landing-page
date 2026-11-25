@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Devom - Tecnologia que impulsa tu negocio</title>
+    <title>Devom · Desarrollo de software en Chile</title>
     <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
-      content="Devom - Soluciones digitales que transforman negocios. Desarrollo web, movil, hosting, SaaS y consultoria."
+      content="Devom diseña y programa sitios web, sistemas a medida y aplicaciones para empresas, instituciones y organizaciones de Chile."
     />
-    <meta name="theme-color" content="#071428" />
-    <link rel="icon" type="image/x-icon" href="devom-logo.png" />
+    <meta name="theme-color" content="#050B24" />
+    <link rel="icon" type="image/png" href="devom-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <script>
+      // Antes de pintar: activa las animaciones y aplica el tema guardado para evitar parpadeos.
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('devom-theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <app-root></app-root>

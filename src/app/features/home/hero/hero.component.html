@@ -1,0 +1,19 @@
+<header class="hero" id="inicio">
+  <div class="in">
+    <div class="hero-txt">
+      <span class="eyebrow">Desarrollo de software · Chile</span>
+      <h1>
+        @for (w of words; track $index) {<span class="w" [style.--i]="$index">{{ w }}</span>{{ ' ' }}}<span class="w gt" [style.--i]="words.length">{{ highlight }}</span><span class="w" [style.--i]="words.length + 1">.</span>
+      </h1>
+      <p>
+        Somos Devom, un estudio de desarrollo que diseña y programa sitios web, sistemas a medida y
+        aplicaciones para empresas, instituciones y organizaciones de Chile.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-p" href="#contacto">Cuéntanos tu proyecto</a>
+        <a class="btn btn-s" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+    <app-particle-logo />
+  </div>
+</header>

@@ -1,30 +1,23 @@
-import { Component } from '@angular/core';
-import { HeroComponent } from './components/hero/hero.component';
-import { ServicesComponent } from './components/services';
-import { PricingComponent } from './components/pricing';
-import { CtaComponent } from './components/cta';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HeroComponent } from './hero/hero.component';
+import { AboutComponent } from './about/about.component';
+import { ServicesComponent } from './services/services.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProcessComponent } from './process/process.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [
-    HeroComponent,
-    ServicesComponent,
-    AboutComponent,
-    PricingComponent,
-    CtaComponent,
-    ContactComponent,
-  ],
+  imports: [HeroComponent, AboutComponent, ServicesComponent, ProjectsComponent, ProcessComponent, ContactComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <main>
       <app-hero />
-      <app-services />
       <app-about />
-      <app-pricing />
+      <app-services />
+      <app-projects />
+      <app-process />
       <app-contact />
-      <app-cta />
     </main>
   `,
 })
