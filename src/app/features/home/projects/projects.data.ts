@@ -44,6 +44,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     description:
       'SaaS para administrar restaurantes en un solo lugar: punto de venta con mesas y comandas a cocina, carta digital con QR, pedidos y delivery, inventario con recetas y costeo, caja y finanzas.',
     tags: ['SaaS', 'Restaurantes', 'Modo oscuro'],
+    url: 'https://redom.cl',
     image: 'proyectos/redom.jpg',
   },
   {
